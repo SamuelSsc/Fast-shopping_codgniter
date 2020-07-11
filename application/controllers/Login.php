@@ -22,15 +22,9 @@ class Login extends CI_Controller {
 		$email = $this->input->post('txtEmail');
 		$senha = $this->input->post('txtSenha');
 
-		$this->load->model('M_acesso');
+		$this->load->model('m_acesso');
 
-		$retorno = $this->M_acesso->validalogin($email, $senha);
-		
-		if($retorno == 1){
-			$_SESSION['usuario'] = $email;
-		}else{
-			unset($_SESSION['usuario']);
-		}
+		$retorno = $this->m_acesso->validalogin($email, $senha);
 
 		echo $retorno;
 	}

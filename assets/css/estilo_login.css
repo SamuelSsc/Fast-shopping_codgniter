@@ -12,6 +12,10 @@ body{
 	min-width: 100vw;
 }
 
+button {
+	margin-left: 30px;
+}
+
 input{
 	display:block;
 	height: 35px;
@@ -44,15 +48,18 @@ div#Corpo-form h1, div#Corpo-form-cad h1{
 }
 
 a{
-	color: black;
 	text-decoration: none;
 	display: block;
 	text-align: center;
+	margin: 10px 0;
+	color: rgba(255,255,255,0.6);
+	transition: all 0.2s;
 }
 
-a:hover{
-	text-decoration: underline;
 
+a:hover{
+	color: #fff;
+	text-decoration: none;
 }
 
 input[type=submit]{

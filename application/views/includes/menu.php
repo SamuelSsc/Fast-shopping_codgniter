@@ -7,22 +7,15 @@
 	</a>
 
 	<!--botao de Sair -->
-	<button type="button" class="btnLog btn-light mt-3 mr-2">
-			<?php	
-				//$_SESSION ['id_usuario'] = false;
-			?>
-			<style type="text/css">
-				a:link {
-					text-decoration: none;
-				}
-			</style>
-			<a href="index.php">Sair</a>
-		</button>
+	<button type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
+			Sair
+	</button>
 
 		<!--botao de Login-->
-		<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-light mt-3 mr-2">
+		<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
 			Login
 		</button>
+
 
 	<nav class="navbar-expand-lg navbar-dark" style="background-color: #46b7bf">
 

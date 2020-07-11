@@ -9,15 +9,15 @@
 		<form id="loginuser">
 			<fieldset>
 				<div class="form-group">
-					<input class="form-control" placeholder="Usuário" name="txtUsuario" type="text" autofocus required>
+					<input class="form-control" placeholder="Usuário" name="txtEmail" type="text" autofocus required>
 				</div>
 				<div class="form-group">
-					<input class="form-control" placeholder="Senha" name="txtSenha" type="password" required>
+					<input class="form-control" placeholder="Senha" name="txtSenha" type="password" required >
 				</div>
 				<button type="submit" id="btnEntrar" class="btn btn-block btn-dark">Entrar</button>
 			</fieldset>
 		</form>
-		<a href="<?= base_url("Cadastro")?>">Ainda não é inscrito! <strong>Cadastre-se</strong></a>
+		<a href="<?= base_url("Usuario/cadastrar")?>">Ainda não é inscrito! <strong>Cadastre-se</strong></a>
 	</div>
 </body>
 </html>

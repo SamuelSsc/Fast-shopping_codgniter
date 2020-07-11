@@ -6,7 +6,7 @@
 body{
 	background-image: url("../Img/fcadastro.png");
 	background-position: 50% 70%;
-	color: darkblue;
+	color: black;
 	font-family: arial; 
 	width: 100%;
 	min-width: 100vw;
@@ -52,11 +52,10 @@ a{
 
 a:hover{
 	text-decoration: underline;
-
 }
 
-input[type=submit]{
-	background-color: black;
+button[type=submit]{
+	/* background-color: black; */
 	color: white;
 	border: none;
 	cursor: pointer;

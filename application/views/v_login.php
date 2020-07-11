@@ -14,7 +14,7 @@
 				<div class="form-group">
 					<input class="form-control" placeholder="Senha" name="txtSenha" type="password" required>
 				</div>
-				<button type="submit" id="btnEntrar" class="btn btn-block btn-primary">Entrar</button>
+				<button type="submit" id="btnEntrar" class="btn btn-block btn-dark">Entrar</button>
 			</fieldset>
 		</form>
 		<a href="<?= base_url("Cadastro")?>">Ainda não é inscrito! <strong>Cadastre-se</strong></a>

@@ -7,9 +7,9 @@
     <meta name="author" content="">
     <title>Fast Shopping</title>
 	
-	<link rel="stylesheet" type="text/css" href=".<?= base_url("/css/estilo_login.css")?>">	
+	<link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/estilo_login.css")?>">	
 
-	<link rel="stylesheet" href="<?= base_url("assets/bootstrap/4.1.3/css/bootstrap.min.css")?>">
+	<link rel="stylesheet" href="<?= base_url("assets/Bootstrap/4.1.3/css/bootstrap.min.css")?>">
 
     <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel="stylesheet" type='text/css'>
 

@@ -15,6 +15,16 @@
                 return 0;
             }
         }
+
+        public function verificarSessao($usuario){
+            $retorno = $this->db->query("select * from usuarios where user = '$usuario' and tipo = 'comum'");
+
+            if($retorno->num_rows() >0){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
     }
 
 ?>

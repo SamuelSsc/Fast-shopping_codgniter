@@ -1,0 +1,13 @@
+body{
+	background-color:#46b7bf !important ;
+}
+
+
+.img-fluid{
+	position: center;
+	display: block;
+}
+
+.container{
+	background-image: url(../img/fcadastro.png);
+}

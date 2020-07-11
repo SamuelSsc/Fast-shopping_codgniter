@@ -18,7 +18,13 @@
  	}
 
  	public function consultar(){
- 		$retorno = $this->db->query("select user,senha,tipo,statuss from usuarios");
+ 		$retorno = $this->db->query("select user,senha,tipo, case statuss
+ 																when 'D' then
+ 																'DESATIVADO'
+ 																else
+ 																'ATIVO'
+ 																end statuss
+ 																from usuarios");
 
  		//retorno do select
  		if($retorno->num_rows() > 0){
@@ -61,6 +67,16 @@
 		if($this->db->affected_rows() > 0){
 			return 1;
 		} else{
+			return 0;
+		}
+	}
+
+	public function reativar($usuario){
+		$retorno = $this->db->query("update usuarios set statuss = '' where user = '$usuario'");
+
+		if ($this->db->affected_rows() > 0) {
+			return 1;
+		}else{
 			return 0;
 		}
 	}

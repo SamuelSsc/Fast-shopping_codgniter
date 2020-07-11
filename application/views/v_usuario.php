@@ -70,7 +70,7 @@
                                     <!--campo que retornará do Contoller deverá ser incluídio no data-field -->
                                     <th data-field = 'senha' class = "col-md-6">Senha</th>                    
                                     <!--campo que retornará do Contoller deverá ser incluídio no data-field -->
-                                    <th data-field = 'tipo' class="col-md-2 text-left">Tipo</th>
+                                    <th data-field = 'tipo' class="col-md-2 text-left text-uppercase">Tipo</th>
                                     <th data-field = 'statuss' class="col-md-2 text-left">Status</th>
                                     <th  class = "col-md-3" data-formatter="opcoes"  data-field = "user" >Ação</th>
                                     <!--colocaremos a função data-formatter que chamará a função JavaScript opcoes
@@ -97,7 +97,6 @@
                     });
                     return false;
                 }else{
-
                     $.ajax({ //abrindo o ajax onde estamos pegando o método os dados através de post, onde enviamos para a controller usuario na função cadastrar
                         type: "POST",
                         url: 'usuario/cadastrar',
@@ -129,8 +128,13 @@
             }, 5000);
         });
         //opcoes está demonstrando os dois botões um de lixeira e um para modificação de um usuario
-        function opcoes(value){
-                var opcoes = '<button class="btn btn-xs btn-primary text-center" type="button" onclick="busca_usuario('+"'"+value+"'"+');"><span class="glyphicon glyphicon-pencil"></span></button> \n\ <button class="btn btn-xs btn-danger text-center" type="button" onclick="desativa_usuario('+"'"+value+"'"+');"><span class="glyphicon glyphicon-trash"></span></button>';
+        function opcoes(value,row,index){
+                if (row.statuss == 'DESATIVADO'){
+                    var opcoes = '<button class="btn btn-xs btn-warning text-center" type="button" onclick="reativa_usuario('+"'"+value+"'"+');"><span class="glyphicon glyphicon-open"></span></button>'; 
+                }
+                else{
+                    var opcoes = '<button class="btn btn-xs btn-primary text-center" type="button" onclick="busca_usuario('+"'"+value+"'"+');"><span class="glyphicon glyphicon-pencil"></span></button> \n\ <button class="btn btn-xs btn-danger text-center" type="button" onclick="desativa_usuario('+"'"+value+"'"+');"><span class="glyphicon glyphicon-trash"></span></button>';
+                }
                 return opcoes;
             };
         // busca de usuario que realizará a alteração do usuario através da modal que abrirá para ele 
@@ -193,7 +197,7 @@
                                     $('#tableusu').bootstrapTable('refresh');
                                 }
                             });
-                            $('#alteracao').Modal('hidden=true');
+                            $('#alteracao').modal('hide');
                         }else{
                             swal({
                                 title:"Atenção",
@@ -235,23 +239,24 @@
 
                 function(isConfirm){
                     $.ajax({
-                        url: base_url + "usuario/desativar",
                         type: "POST",
                         data: {'usuario' : user},
                         success: function(data){
                             if (data == 1) {
                                 swal({
+                                    url: base_url + "usuario/desativar",
                                     title: "OK!",
                                     text: "Usuário DESATIVADO!",
                                     type: "success",
                                     showCancelButton: false,
-                                    ConfirmButtonColor: "#54DD74",
-                                    ConfirmButtonText: "OK!",
-                                    CancelButtonText:"",
+                                    confirmButtonColor: "#54DD74",
+                                    confirmButtonText: "OK!",
+                                    cancelButtonText:"",
                                     closeOnConfirm: true,
                                     closeOnCancel: false},
                                     function(isConfirm){
                                         if (isConfirm){
+                                            
                                         }
                                     }
                                 );
@@ -261,9 +266,9 @@
                                     text: "erro na desativação, verifique",
                                     type: "error",
                                     showCancelButton: false,
-                                    ConfirmButtonColor: "#54DD74",
-                                    ConfirmButtonText: "OK!",
-                                    CancelButtonText:"",
+                                    confirmButtonColor: "#54DD74",
+                                    confirmButtonText: "OK!",
+                                    cancelButtonText:"",
                                     closeOnConfirm: false,
                                     closeOnCancel: false
                                 });
@@ -296,8 +301,8 @@
                         text: "Usuário já cadastrado na base de dados, verifique!",
                         type: "error",
                         showCancelButton: false,
-                        ConfirmButtonColor: "#54DD74",
-                        ConfirmButtonText:"OK!",
+                        confirmButtonColor: "#54DD74",
+                        confirmButtonText:"OK!",
                         closeOnConfirm: true,
                         closeOnCancel: false
                     });
@@ -320,6 +325,70 @@
                 }
             });
         }
+
+        function reativa_usuario(user){
+            swal({title: "Atenção",
+                text: "Gostaria de Reativar esse Usuário?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Sim",
+                cancelButtonText: "Não",
+                closeOnConfirm: false,
+                closeOnCancel: true},
+                function (isConfirm){
+                    if (isConfirm){
+                        $.ajax({
+                            url: base_url + "usuario/reativar",
+                            type: "POST",
+                            data:{'usuario': user},
+                            success: function(data){
+                                if (data == 1){
+                                    swal({
+                                        title: "OK!",
+                                        text: "Usuário REATIVADO!",
+                                        type: "success",
+                                        showCancelButton: false,
+                                        confirmButtonColor: "#54DD74",
+                                        confirmButtonText: "OK!",
+                                        cancelButtonText: "",
+                                        closeOnConfirm: true,
+                                        closeOnCancel: false
+                                    },
+                                    function(isConfirm){
+                                        if(isConfirm){
+                                            $('#tableusu').bootstrapTable('refresh');
+                                        }
+                                    });
+                                }else{
+                                    swal({
+                                        title: "OK",
+                                        text: "Erro na Reativação, verifique",
+                                        type: "error",
+                                        showCancelButton: false,
+                                        confirmButtonColor: "#54DD74",
+                                        confirmButtonText: "OK!",
+                                        cancelButtonText: "",
+                                        closeOnConfirm: false,
+                                        closeOnCancel: false
+                                    });
+                                }
+                            },
+                            beforeSend: function (){
+                                swal({
+                                    title: "Aguarde!",
+                                    text: "Gravando dados...",
+                                    imageUrl: "assets/img/alertas/loading.gif"
+                                });
+                            },
+                            error: function(data_error){
+                                sweetAlert("Atenção"," Erro ao gravar os dados!", "error");
+                            }
+                        });
+                    }
+                }
+            );
+        }   
     </script>
 
     <!-- Modal para alteração de usuarios será chamado em na função busca_usuario -->

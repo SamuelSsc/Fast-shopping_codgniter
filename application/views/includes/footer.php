@@ -14,7 +14,4 @@
 
 <script type="text/javascript" src="<?= base_url('assets/js/moment.js')?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/pt-br.js')?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js')?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/bootstrap-select.min.js')?>"></script>
-<script type="text/javascript" src="<?= base_url('assets/js/bootstrap-datetimepicker.js'); ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/validator.min.js')?>"></script>

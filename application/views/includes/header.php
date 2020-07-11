@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <title>Fast Shopping</title>
 	
-	<link rel="stylesheet" type="text/css" href=".<?= base_url("/css/estilo_login.css")?>">	
+	<link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/estilo_login.css")?>">	
 
 	<link rel="stylesheet" href="<?= base_url("assets/bootstrap/4.1.3/css/bootstrap.min.css")?>">
 

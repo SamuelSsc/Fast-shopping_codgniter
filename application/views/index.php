@@ -1,7 +1,6 @@
 <body>
 	<div class="container-fluid">
 
-
 <!--CARROSEL-->
 		<div id="myCarousel" class="carousel slide mt-4" data-ride="carousel">
 			<ol class="carousel-indicators">

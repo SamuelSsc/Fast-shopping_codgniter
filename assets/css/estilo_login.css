@@ -8,6 +8,8 @@ body{
 	background-position: 50% 70%;
 	color: darkblue;
 	font-family: arial; 
+	width: 100%;
+	min-width: 100vw;
 }
 
 input{
@@ -25,7 +27,7 @@ input{
 }	
 
 div#Corpo-form{
-	background-color: red
+	background-color: red;
 	width: 420px;
 	margin: 150px auto 0px auto;
 }

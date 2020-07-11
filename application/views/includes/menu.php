@@ -20,13 +20,9 @@
 		</button>
 
 		<!--botao de Login-->
-		<button type="button" class="btnLog btn-light mt-3 mr-2">
-			<a href="html/login.php">
-				<?php
-			echo "Login";
-		?>
-			</a>
-	</button>
+		<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-light mt-3 mr-2">
+			Login
+		</button>
 
 	<nav class="navbar-expand-lg navbar-dark" style="background-color: #46b7bf">
 
@@ -83,3 +79,9 @@
 		</div>
 	</nav>
 </div>
+<script>
+	function chamaLogin() {
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "Login";
+	}
+</script>

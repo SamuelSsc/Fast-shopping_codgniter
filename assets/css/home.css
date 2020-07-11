@@ -1,6 +1,11 @@
-
+#body{
+	background-color: #46b7bf;
+}
+.nomo_loja{
+	color: white;
+}
 .btnLog{
-	float:right;
+	float: right;
 	border-radius: 5px ;
 	
 }

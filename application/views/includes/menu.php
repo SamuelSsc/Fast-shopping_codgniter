@@ -1,16 +1,14 @@
-<div class="container-fluid">
-	<nav class="navbar-expand-lg navbar-dark" style="background-color: #46b7bf">
+<link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/home.css")?>">
 
-		<a class="navbar-brand" href="#">
-			<img src="<?= base_url("assets/img/S.png")?>" alt="logo" class="img-fluid">
-			<h5 class="nomo_loja ml-3 mb-0">Fast Shopping</h5>
-		</a>
+<div class="container-fluid" style="background-color: #46b7bf">
+	<a class="navbar-brand" href="#">
+		<img src="<?= base_url("assets/img/S.png")?>" alt="logo" class="img-fluid">
+		<h5 class="nomo_loja ml-3 mb-0">Fast Shopping</h5>
+	</a>
 
-
-
-		<!--botao de Sair -->
-		<button type="button" class="btnLog btn-light mt-3 mr-2">
-			<?php
+	<!--botao de Sair -->
+	<button type="button" class="btnLog btn-light mt-3 mr-2">
+			<?php	
 				//$_SESSION ['id_usuario'] = false;
 			?>
 			<style type="text/css">
@@ -28,16 +26,22 @@
 			echo "Login";
 		?>
 			</a>
-		</button>
+	</button>
+
+	<nav class="navbar-expand-lg navbar-dark" style="background-color: #46b7bf">
+
+		<form class="form-inline">
+			<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar produto" aria-label="Pesquisar">
+			<button class="btn btn-btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
+		</form>
+
+		
+		
 
 		<!-- mensagem com o email-->
 		<div class="Msgemail">
 		</div>
 
-		<form class="form-inline ">
-			<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar produto" aria-label="Pesquisar">
-			<button class="btn btn-btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
-		</form>
 
 		<!--botao de pesquisar
 	<nav class="navbar navbar-dark" style="background-color: #46b7bf">

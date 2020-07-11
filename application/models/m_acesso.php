@@ -5,10 +5,9 @@
     class M_acesso extends CI_Model
     {
         public function validalogin($usuario, $senha){
-            $retorno = $this->db->query("select * from usuarios
-                                        where user = '$usuario'
-                                        and senha = '$senha'
-                                        and statuss = '' ");
+            $retorno = $this->db->query("select * from usuario
+                                        where email = '$usuario'
+                                        and senha = '$senha'");
             if($retorno->num_rows() > 0){
                 return 1;
             }else{
@@ -17,7 +16,7 @@
         }
 
         public function verificarSessao($usuario){
-            $retorno = $this->db->query("select * from usuarios where user = '$usuario' and tipo = 'comum'");
+            $retorno = $this->db->query("select * from usuario where email = '$usuario' and tipo = 'comum'");
 
             if($retorno->num_rows() >0){
                 return 1;

@@ -71,7 +71,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/positivo7.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/positivo7.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Notebook positivo Motion I341TA</h5>
@@ -89,7 +89,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/a30s.jpg" alt="logo" class="img-fluid">
+						<img src= "<?= base_url("assets/img/a30s.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Samsung galaxy A30s</h5>
@@ -108,7 +108,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/s10+.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/s10+.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Samsung galaxy S10+</h5>
@@ -127,7 +127,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/g8 plus.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/g8 plus.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Motorola Moto G8 PLUS</h5>
@@ -146,7 +146,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/moto oneaction.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/moto oneaction.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Motorola Moto One Action</h5>
@@ -165,7 +165,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/xiaomi redmi note 8 pro.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/xiaomi redmi note 8 pro.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Xiaomi Redmi Note 8 Pro</h5>
@@ -183,7 +183,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/xiaomi mi9.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/xiaomi mi9.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Xiaomi Mi 9</h5>
@@ -202,7 +202,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/Dell inspiron.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/Dell inspiron.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Notebook Dell Inspiron</h5>
@@ -221,7 +221,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/fone jbl.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/fone jbl.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Fone de ouvido sem fio JBL tune T500BT</h5>
@@ -239,7 +239,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/airdots.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/airdots.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Fone de ouvido Bluetooth xiaomi redmi Airdots</h5>
@@ -257,7 +257,7 @@
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
 				<div class="card">
 					<div class="card-header">
-						<img src="img/smartch watch sansung.jpg" alt="logo" class="img-fluid">
+						<img src="<?= base_url("assets/img/smartch watch sansung.jpg")?>" alt="logo" class="img-fluid">
 					</div>
 					<div class="card-body">
 						<h5>Sansung Smartwatch A1</h5>
@@ -273,5 +273,3 @@
 			</div>
 		</div>
 	</div>
-</body>
-

@@ -17,7 +17,22 @@ CREATE table produto(
     nome varchar(100) not null,
     preço float (7,2) not null,
     qtde int (4) not null,
+    img varchar(500) not null,
     primary key (id_produto)
+);
+
+CREATE table detalhes(
+ id_detalhes int not null auto_increment,
+ FK_id_produto int not null,
+ marca varchar(30) not null,
+ Ram int(2),
+ rom int(3),
+ gpu varchar(40),
+ processador varchar(40),
+ descricao varchar (1000),
+ 
+ foreign key (Fk_id_produto) references produto (id_produto),
+ primary key (id_detalhes)
 );
 
 create table endereco(
@@ -62,5 +77,9 @@ Values ("Notebook gamer sansung odyssey", "7124.05", "534"),
        ("Fone de ouvido Bluetooth xiaomi redmi Airdots", "106.90", "1534"),
        ("Samsung Smartwatch A1", "129.90", "1302");
        
-	select * from usuario;
+
+insert into detalhes(Fk_id_produto, marca, ram, rom, gpu, processador, descricao)
+values ("1","sansung", "16","1","Geforce gtx1050 4gb","intel core i7","notbook GAMER");
+       
+select * from detalhes;
        

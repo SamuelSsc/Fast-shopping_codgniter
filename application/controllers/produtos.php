@@ -11,18 +11,95 @@ class Produtos extends CI_Controller {
 		$this->load->view('includes/header');
 		//Carrega o rodapé da tela (Footer)
 		$this->load->view('includes/footer');
-
-		//Carrega o corpo da tela (Body)
+	
+		//csCarrega o corpo da tela (Body)sa
 		$this->load->view('includes/menu');
+		$this->load->view('includes/carrousel');	
 		$this->load->view('index');
 
 	}
 
-	public function mostraProduto($id) {
-		$this->load->model('m_produto');
+	public function mostrarcelular()
+	{
 
-		$retorno = $this->m_produto->get($id);
+		$this->load->view('includes/footer');
+
+		//Carrega o corpo da tela (Body)
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		$this->load->view('includes/carrousel');
+		$this->load->view('celulares');
+
 	}
+
+	public function mostrarnoot()
+	{
+
+		$this->load->view('includes/footer');
+
+		//Carrega o corpo da tela (Body)
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		$this->load->view('includes/carrousel');
+		$this->load->view('notebooks');
+
+	}
+
+	public function mostraracessorios()
+	{
+
+		$this->load->view('includes/footer');
+
+		//Carrega o corpo da tela (Body)
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		$this->load->view('includes/carrousel');
+		$this->load->view('acessorios');
+
+	}
+
+	public function odyssei()
+	{
+
+		$this->load->view('includes/footer');
+
+		//Carrega o corpo da tela (Body)
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		$this->load->view('odyssei');
+
+	}
+
+	public function comprar()
+	{
+
+		$this->load->view('includes/footer');
+
+		//Carrega o corpo da tela (Body)
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		$this->load->view('comprar');
+	}
+
+	public function sobre()
+	{
+
+		$this->load->view('includes/footer');
+
+		//Carrega o corpo da tela (Body)
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		$this->load->view('sobre');
+
+	}
+
+	
+
+	public function mostraProduto($id) {
+	$this->load->model('m_produto');
+	$retorno = $this->m_produto->get($id);
+	}
+	
 
 }
 ?>

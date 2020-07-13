@@ -43,8 +43,7 @@
 					data: $("#cadastroUser").serialize(),
 					success: function(data){
 						if ($.trim(data) == 1 ) 
-						{
-	
+						{	
 							swal({title:"OK!", text: "Dados salvos com sucesso", type:"success"});
 							const base_url = "<?= base_url()?>";
 							window.location.href = base_url + "Login";

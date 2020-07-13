@@ -1,8 +1,6 @@
 <body>
 	<div class="container-fluid">
-
-<!--CARROSEL-->
-		<div id="myCarousel" class="carousel slide mt-4" data-ride="carousel">
+	<div id="myCarousel" class="carousel slide mt-4" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
@@ -46,6 +44,8 @@
 			</a>
 		</div>
 
+</div>
+
 
 		<!--CARDS DOS PRODUTOS-->
 		<div class="row mb-5 mt-4">
@@ -59,8 +59,8 @@
 						16 GB(Ram) + 1TB (HD)<br>
 						GeForce gtx1050<br>
 						processador intel core i7<br>
-						<button type="button" class="btn btn-outline-info">
-							<a href="html/Sansung odyssey.php">saiba mais</a>
+						<button type="button" class="btn btn-outline-info" onclick="odyssei()">
+						saiba mais
 						</button>
 					</div>
 				</div>
@@ -272,3 +272,12 @@
 			</div>
 		</div>
 	</div>
+
+<script>
+
+	function odyssei() {
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "produtos/odyssei";
+	}
+
+</script>

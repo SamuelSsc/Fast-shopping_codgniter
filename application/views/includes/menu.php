@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/home.css")?>">
 
 <div class="container-fluid" style="background-color: #46b7bf">
-	<a class="navbar-brand" href="#">
+	<a class="navbar-brand" onclick="inicio()">
 		<img src="<?= base_url("assets/img/S.png")?>" alt="logo" class="img-fluid">
 		<h5 class="nomo_loja ml-3 mb-0">Fast Shopping</h5>
 	</a>
@@ -28,7 +28,7 @@
 		
 
 		<!-- mensagem com o email-->
-		<div class="Msgemail">
+		<div class="Msgemail">	
 		</div>
 
 
@@ -54,27 +54,48 @@
 				</li>
 
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" cid="navbarDropdown" role="button" data-toggle="dropdown"
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false">
 						Produtos
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="html/celulares.html">Celulares</a>
-						<a class="dropdown-item" href="html/Notebooks.html">Nootebooks</a>
-						<a class="dropdown-item" href="html/Acessorios.html">Acessorios</a>
+						<button class="dropdown-item" onclick="chamacelular()" >Celulares</button>
+						<a class="dropdown-item" onclick="chamanoot()">Nootebooks</a>
+						<a class="dropdown-item" onclick="chamaacessorios()" >Acessorios</a>
 					</div>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="html/sobre.html"> Sobre a loja</a>
+					<a class="nav-link" onclick="sobre()"> Sobre a loja</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 </div>
+<div>
 <script>
 	function chamaLogin() {
 		const base_url = "<?= base_url()?>";
 		window.location.href = base_url + "Login";
+	}
+	function chamacelular(){
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "produtos/mostrarcelular";
+	}
+	function chamanoot(){
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "produtos/mostrarnoot";
+	}
+	function chamaacessorios(){
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "produtos/mostraracessorios";
+	}
+	function sobre(){
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "produtos/sobre";
+	}
+	function inicio(){
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "home";
 	}
 </script>

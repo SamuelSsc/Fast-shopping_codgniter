@@ -37,6 +37,8 @@ create table compra(
     Fk_cep int not null,
     data_compra date not null,
     valor float (7,2) not null,
+    cpf  int(11) not null,
+    contato int(11) not null,
     
     foreign key (FK_cep) references endereco (cep),
     foreign key (FK_id_produto) references produto (id_produto),

@@ -2,14 +2,13 @@
 
     defined('BASEPATH') OR exit('No direct script access allwed');
 
-    class M_acesso extends CI_Model
+    class M_produto extends CI_Model
     {
-        public function validalogin($email, $senha){
-            $retorno = $this->db->query("select * from usuario
-                                        where email = '$email'
-                                        and senha = '$senha'");
+        public function get($id){
+            $retorno = $this->db->query("select * from produto
+                                        where id_produto = '$id'");
             if($retorno->num_rows() > 0){
-                return 1;
+                return $retorno;
             }else{
                 return 0;
             }
@@ -23,6 +22,11 @@
             }else{
                 return 0;
             }
+        }
+
+        public function detalhesprod($id){
+            $retorno = $this->db->query)("select * from detalhes where FK_id_produto = '1'"); 
+            return $retorno
         }
     }
 

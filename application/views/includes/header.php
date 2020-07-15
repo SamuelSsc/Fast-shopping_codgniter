@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Fast Shopping</title>	
+	
+	<link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/home.css")?>">	
 
-	<link rel="stylesheet" href="<?= base_url("assets/bootstrap/4.1.3/css/bootstrap.min.css")?>">
-    <link href="<?= base_url('assets/css/style.css')?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/colors.css')?>" rel="stylesheet">
+	<link rel="stylesheet" href="<?= base_url("assets/Bootstrap/4.1.3/css/bootstrap.min.css")?>">
+
     <link href="<?= base_url('assets/css/buttons.css')?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/sweetalert.css')?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/bootstrap-table.min.css')?>" rel="stylesheet">

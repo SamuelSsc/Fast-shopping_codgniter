@@ -5,9 +5,9 @@
  
  class m_usuario extends CI_Model
  {
- 	public function cadastrar($usuario, $senha, $tipo){
+ 	public function cadastrar($nome, $email, $senha){
  		//Instrução que executa a Query no banco de dados
- 		$this->db->query("insert into usuarios (user, senha, tipo) values ('$usuario','$senha', '$tipo')");
+ 		$this->db->query("insert into usuario (nome, email, senha) values ('$nome','$email', '$senha')");
 
  		//Verifica se o dado foi inserido
  		if($this->db->affected_rows() > 0){

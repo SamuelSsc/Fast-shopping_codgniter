@@ -14,6 +14,7 @@ class Home extends CI_Controller {
 
 		//Carrega o corpo da tela (Body)
 		$this->load->view('includes/menu');
+		$this->load->view('includes/carrousel');
 		$this->load->view('index');
 
 	}

@@ -53,8 +53,8 @@
  		}
  	}
 
- 	public function desativar($usuario){
- 		$retorno = $this->db->query("update usuarios set statuss ='D' where user = '$usuario' ");
+ 	public function desativar($email){
+ 		$retorno = $this->db->query("delete * from usuario where user = '$email'");
  		if ($this->db->affected_rows() > 0) {
  			return 1;
  		}else{

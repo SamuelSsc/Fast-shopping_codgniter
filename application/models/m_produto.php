@@ -25,9 +25,16 @@
         }
 
         public function detalhesprod($id){
-            $retorno = $this->db->query)("select * from detalhes where FK_id_produto = '1'"); 
-            return $retorno
+            $retorno = $this->db->query("select * from detalhes where FK_id_produto = '1'"); 
+            return $retorno;
+        }
+        public function getProdutos(){
+            $retorno = $this->db->query("select * from produto a
+                                        join detalhes b on b.id_detalhes = a.FK_id_detalhes");
+            //echo $retorno;
+            return $retorno->result();
         }
     }
+        
 
 ?>

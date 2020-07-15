@@ -26,12 +26,13 @@ CREATE table usuario(
 );
 
 
+
 CREATE table produto(
     id_produto int not null auto_increment,
     FK_id_detalhes int not null,
     nome varchar(100) not null,
     tipo varchar(1) not null,
-    preço float (7,2) not null,
+    preco float (7,2) not null,
     qtde int (4) not null,
     img varchar(500) not null 	,
     
@@ -73,7 +74,7 @@ create table compra(
 
  
 
-insert into produto(FK_id_detalhes,nome, tipo, preço, qtde, img)
+insert into produto(FK_id_detalhes,nome, tipo, preco, qtde, img)
 Values ("1","Notebook gamer sansung odyssey", "N", "7124.05", "534","https://http2.mlstatic.com/notebook-samsung-odyssey-nvidia-gtx-1050ti-8gb-1tb-preto-D_NQ_NP_996970-MLB41306069450_042020-F.webp");
        /*("2","Notebook positivo Motion I341TA", "1882.09", "707"),
        ("3","Samsung galaxy A30s", "1329.00", "999"),
@@ -93,4 +94,6 @@ values ("samsung", "16","1 TB","Geforce gtx1050 4GB","intel core i7 4.2Ghz","Alt
 Entradas e saídas: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth");
        
 select * from produto;
+
+select * from produto a join detalhes b on b.id_detalhes = a.FK_id_detalhes;
        

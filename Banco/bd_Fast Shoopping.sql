@@ -11,6 +11,7 @@ CREATE table usuario(
     Nome varchar(50) not null,
     email varchar(250)not null,
     Senha varchar(250)not null,
+	logado boolean default false,
     primary key (id_Usuario)
 );
 
@@ -73,7 +74,7 @@ create table compra(
  
 
 insert into produto(nome, preço, qtde)
-Values ("Notebook gamer sansung odyssey", "7124.05", "534"),
+Values ("Notebook gamer samsung odyssey", "7124.05", "534"),
        ("Notebook positivo Motion I341TA", "1882.09", "707"),
        ("Samsung galaxy A30s", "1329.00", "999"),
        ("Samsung galaxy S10+", "3254.07", "908"),

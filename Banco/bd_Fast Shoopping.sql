@@ -26,7 +26,7 @@ CREATE table detalhes(
  FK_id_produto int not null,
  marca varchar(30) not null,
  Ram int(2),
- rom int(3),
+ rom varchar(10),
  gpu varchar(40),
  processador varchar(40),
  descricao varchar (1000),
@@ -79,7 +79,8 @@ Values ("Notebook gamer sansung odyssey", "7124.05", "534"),
        
 
 insert into detalhes(Fk_id_produto, marca, ram, rom, gpu, processador, descricao)
-values ("1","sansung", "16","1","Geforce gtx1050 4gb","intel core i7","notbook GAMER");
+values ("1","samsung", "16","1 TB","Geforce gtx1050 4GB","intel core i7 4.2Ghz","Altura: 17.9 mm; Largura: 375,6 mm; Profundidade: 255 mm; Peso: 2,4 kg; 
+Entradas e saídas: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth");
        
 select * from detalhes;
        

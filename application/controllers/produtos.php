@@ -62,7 +62,7 @@ class Produtos extends CI_Controller {
 	{
 
 		$this->load->view('includes/footer');
-
+		//$this->load->model('m_produto/detalhesprod');
 		//Carrega o corpo da tela (Body)
 		$this->load->view('includes/header');
 		$this->load->view('includes/menu');

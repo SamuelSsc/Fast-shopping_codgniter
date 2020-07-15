@@ -26,8 +26,6 @@ CREATE table produto(
     primary key (id_produto)
 );
 
- 
-
 CREATE table detalhes(
  id_detalhes int not null auto_increment,
  FK_id_produto int not null,
@@ -41,8 +39,6 @@ CREATE table detalhes(
  foreign key (Fk_id_produto) references produto (id_produto),
  primary key (id_detalhes)
 );
-
- 
 
 create table endereco(
     cep int not null,
@@ -91,8 +87,9 @@ Values ("Notebook gamer sansung odyssey", "7124.05", "534"),
        ("Samsung Smartwatch A1", "129.90", "1302");
        
 
- 
-
 insert into detalhes(Fk_id_produto, marca, ram, rom, gpu, processador, descricao)
 values ("1","samsung", "16","1 TB","Geforce gtx1050 4GB","intel core i7 4.2Ghz","Altura: 17.9 mm; Largura: 375,6 mm; Profundidade: 255 mm; Peso: 2,4 kg; 
 Entradas e saídas: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth");
+       
+select * from detalhes;
+       

@@ -23,6 +23,11 @@
                 return 0;
             }
         }
+
+        public function detalhesprod($id){
+            $retorno = $this->db->query)("select * from detalhes where FK_id_produto = '1'"); 
+            return $retorno
+        }
     }
 
 ?>

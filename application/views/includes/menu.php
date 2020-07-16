@@ -9,19 +9,20 @@
 	
 	<!--botao de Sair -->
 	<button type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
-			Sair
+		Sair
 	</button>
 
+	<!--botao de Login-->
 		<?php
 		if ($this->session->userdata('usuario')){
-			//<h6>strtoupper($this->session->userdata'usuario'));</h6>//Arrumar aqui!!!!!!!!! pra mostrar na tela o usuario q esta logado.
+			echo '<h6>strtoupper($this->session->userdata"usuario"))</h6>';
 		}else{
 			echo '<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
 			Login
 			</button>';
 		}
 		?>
-		<!--botao de Login-->
+
 		
     
 		

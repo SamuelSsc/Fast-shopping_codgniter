@@ -9,6 +9,7 @@
                                         where email = '$email'
                                         and senha = '$senha'");
             if($retorno->num_rows() > 0){
+                $this->db->query("update usuario set logado = true where email='$email'");
                 return 1;
             }else{
                 return 0;

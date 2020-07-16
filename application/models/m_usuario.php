@@ -5,10 +5,27 @@
  
  class m_usuario extends CI_Model
  {
- 	public function cadastrar($nome, $email, $senha){
- 		//Instrução que executa a Query no banco de dados
- 		$this->db->query("insert into usuario (nome, email, senha) values ('$nome','$email', '$senha')");
 
+	public function getUsuario(){
+		$retorno = $this->db->query("select nome from usuario where logado=true");
+		if($retorno->num_rows() > 0){
+			return $retorno->result();
+		}else{
+			return "";
+		}
+	}
+
+ 	public function cadastrar($nome, $email, $senha){
+		 //Instrução que executa a Query no banco de dados
+		 $retorno = $this->db->query("select * from usuario
+		 where email = '$email'");
+
+		 if($retorno->num_rows() > 0){
+			 return 2;
+		 }
+
+ 		$this->db->query("insert into usuario (nome, email, senha) values ('$nome','$email', '$senha')");
+		
  		//Verifica se o dado foi inserido
  		if($this->db->affected_rows() > 0){
  			return 1;

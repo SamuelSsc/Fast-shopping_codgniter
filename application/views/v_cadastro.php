@@ -47,6 +47,8 @@
 							swal({title:"OK!", text: "Dados salvos com sucesso", type:"success"});
 							const base_url = "<?= base_url()?>";
 							window.location.href = base_url + "Login";
+						}else if($.trim(data) == 2 ){
+							swal({title:"Atenção!", text: "Usuario já cadastrado", type:"error"});
 						}else{
 							swal({title:"Atenção!", text: "Erro ao inserir, verifique os dados", type:"error"});
 						}

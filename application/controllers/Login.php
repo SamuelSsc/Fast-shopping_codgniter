@@ -26,6 +26,14 @@ class Login extends CI_Controller {
 
 		$retorno = $this->m_acesso->validalogin($email, $senha);
 
+    
+		if($retorno ==1) {
+      		$_SESSION['usuario'] = $email;
+    	}else {
+			unset($_SESSION['usuario']);
+    	}
+
+
 		echo $retorno;
 	}
 	public function logout(){

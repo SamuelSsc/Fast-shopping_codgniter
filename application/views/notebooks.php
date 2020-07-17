@@ -1,59 +1,52 @@
+
 <body>
-<div class="row mb-5 mt-4">
-			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
-				<div class="card">
-					<div class="card-header">
-                    <img src="<?= base_url("assets/img/odysei.jpg")?>" alt="logo" class="img-fluid">
-					</div>
-					<div class="card-body">
-						<h5>Notebook gamer samsung odyssey</h5>
-						16 GB(Ram) + 1TB (HD)<br>
-						GeForce gtx1050<br>
-						processador intel core i7<br>
-						<button type="button" class="btn btn-outline-info">
-							<a href="../html/Sansung odyssey.html">saiba mais</a>
-						</button>
+
+<div class="container-fluid">
+            <!--PRODUTOS-->
+        <div class="row mb-5 mt-4">
+			<?php foreach($notebooks as $notebook){?>
+				<div class="col-lg-3 col-md-3 col-sm-6 mb-3"> 
+					<div class="card">
+						<div class="card-header">	
+							<img src="<?php echo $notebook->img?>" alt="logo" class="img-fluid" style="height: 220px; width:100%">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title" style="white-space: nowrap; font-size: 11pt;"><?php echo $notebook->nome?></h5>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item" style="white-space: nowrap; font-size: 10pt;"><?php echo $notebook->Ram?> GB</li>
+								<li class="list-group-item"	style="white-space: nowrap; font-size: 10pt;"><?php echo $notebook->gpu?></li>
+								<li class="list-group-item"	style="white-space: nowrap; font-size: 10pt;"><?php echo $notebook->processador?></li>
+								<li class="list-group-item"	style="white-space: nowrap; font-size: 10pt;">R$ <?php echo $notebook->preco?></li>
+							</ul>
+							<button type="button" class="btn btn-outline-info btn-block my-3"  onclick="chamaNotebook(<?= $notebook->id_produto?>)">
+								Saiba Mais
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
-
-
-			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
-				<div class="card">
-					<div class="card-header">
-                    <img src="<?= base_url("assets/img/positivo7.jpg")?>" alt="logo" class="img-fluid">
-					</div>
-					<div class="card-body">
-						<h5>Notebook positivo Motion I341TA</h5>
-						processador intel core i3<br>
-						4 GB(Ram) + 1TB (HD)<br>
-						Windows 10<br>
-						<button type="button" class="btn btn-outline-info">
-							<a href="../html/Positivo motion.html">saiba mais</a></button>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="col-lg-3 col-md-4 col-sm-6 mb-3"> 
-				<div class="card">
-					<div class="card-header">
-                    <img src="<?= base_url("assets/img/Dell inspiron.jpg")?>" alt="logo" class="img-fluid">
-					</div>
-					<div class="card-body">
-						<h5>Notebook Dell Inspiron</h5>
-						Sistema: Ubuntu linux 18.04<br>
-						4 GB(Ram) + 500 GB (Rom)<br>
-						Tela de 15.6<br>
-						Processador: Intel pentium<br>
-						<button type="button" class="btn btn-outline-info">
-							<a href="../html/Note Dell.html">saiba mais</a></button>
-					</div>
-				</div>
-			</div>						
-
+			<?php }?>
 		</div>
 
-	</div>
+        </div>
+        </body>
+        <script>
+function chamaNotebook(id) {
+		$.ajax({
+			type: "GET",
+			url: `mostraProdutoId/?id=${id}`,
+			success: function() {
+				const base_url = "<?= base_url(); ?>";
+				window.location.href = base_url + `produtos/mostraProdutoId/?id=${id}`;
+			},
+			beforeSend: function() {
+				swal({
+						title: "Aguarde!",
+						text: "Carregando...",
+						imageUrl: "assets/img/gifs/preloader.gif",
+						showConfirmButton: false
+				});
+			},
+		})
+	}
 
-</body>
+    </script>

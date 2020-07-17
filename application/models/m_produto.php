@@ -1,6 +1,6 @@
 <?php
 
-    defined('BASEPATH') OR exit('No direct script access allwed');
+    defined('BASEPATH') OR exit('No direct script access allowed');
 
     class M_produto extends CI_Model
     {
@@ -37,7 +37,28 @@
             return $retorno->result();
 		}
 		
+    
+        public function getCelulares(){
+            $retorno = $this->db->query("select * from produto a
+                                    join detalhes b on b.id_detalhes = a.FK_id_detalhes where tipo='C'");
+            //echo $retorno;
+            return $retorno->result();
     }
+
+        public function getNotebooks(){
+            $retorno = $this->db->query("select * from produto a
+            join detalhes b on b.id_detalhes = a.FK_id_detalhes where tipo='N'");
+            //echo $retorno;
+            return $retorno->result();
+        }
+        public function getAcessorios(){
+            $retorno = $this ->db->query("select * from produto a
+            join detalhes b on b.id_detalhes = a.FK_id_detalhes where tipo='A'");
+            //echo $retorno;
+            return $retorno->result();
+        }
+    }
+    
         
 
 ?>

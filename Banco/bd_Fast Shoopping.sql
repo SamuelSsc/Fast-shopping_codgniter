@@ -56,7 +56,7 @@ create table carrinho(
 Id_carrinho int not null auto_increment,
 Fk_id_produto int not null,
 Fk_id_usuario int not null,
-estado boolean,
+estado boolean default false,
 
 primary key (id_carrinho),
 foreign key (Fk_id_produto) references produto (id_produto),
@@ -83,7 +83,7 @@ insert into detalhes(marca, Ram, rom, gpu, processador, descricao)
 values 
 ("samsung", "16","1 TB","Geforce gtx1050 4GB","intel core i7 4.2Ghz","Altura: 17.9 mm; Largura: 375,6 mm; Profundidade: 255 mm; Peso: 2,4 kg; 
 Entradas e saídas: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth"),
-("Positivo","4","1 TB", "Intel®HD Graphics 62"," Intel® Core™ i3-7020U 2.30GHz","Slots de Memória: On-board, LPDDR3, Unidade Ótica: Não ,Leitor de Cartões: SD / MMC
+("Positivo","4","1 TB", "Intel®\HD Graphics 62"," Intel® Core™ i3-7020U 2.30GHz","Slots de Memória: On-board, LPDDR3, Unidade Ótica: Não ,Leitor de Cartões: SD / MMC
 Portas de Conexão: 1x USB 3.0, 1x USB 2.0, 1x HDMI, 1x RJ-45, 1x Áudio (para microfone e fone de ouvido), 1x DC-in (carregador),Teclado: Português-Brasil, 88 teclas
 ,Mouse: Tipo Touchpad, com toque múltiplo, 2 botões integrados, Carregador: 100~240V Automático, 65W ,Bateria: 2 células, 3000mAh (Integrada)
 Cor: Cobalt Gray, Dimensões: 336 x 223 x 20 mm, Peso Líquido: 1,5 Kg, Peso Bruto: 2,1 Kg, Conteúdo da embalagem: Notebook, Adaptador CA com cabo padrão Inmetro e Guia Rápido 

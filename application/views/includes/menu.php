@@ -5,16 +5,29 @@
 		<img src="<?= base_url("assets/img/S.png")?>" alt="logo" class="img-fluid">
 		<h5 class="nomo_loja mt-1 mb-0">Fast Shopping</h5>
 	</a>
-
+	
+	
 	<!--botao de Sair -->
 	<button type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
-			Sair
+		Sair
 	</button>
 
-		<!--botao de Login-->
-		<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
+	<!--botao de Login-->
+		<?php
+		if ($this->session->userdata('usuario')){
+			echo strtoupper($this->session->userdata('usuario')->nome);
+		}else{
+			echo '<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
 			Login
-		</button>
+			</button>';
+		}
+		?>
+	
+		
+    
+		
+
+
 
 
 	<nav class="navbar-expand-lg navbar-dark" style="background-color: #46b7bf">

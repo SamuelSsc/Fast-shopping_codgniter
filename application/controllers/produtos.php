@@ -64,13 +64,25 @@ class Produtos extends CI_Controller {
 		$id = $this->input->post('id');
 
 		$this->load->model('m_produto');
-		$retorno['produto'] = $this->m_produto->getProdutoId($id);
 
-		$this->load->view('includes/header');
-		$this->load->view('includes/footer');
-		//Carrega o corpo da tela (Body)
-		$this->load->view('includes/menu');
-		$this->load->view('produto', $retorno);
+		$verifica = $this->m_produto->VerificaSeProdutoExistePorId($id);
+
+		if($verifica == 1) {
+			$retorno['produto'] = $this->m_produto->getProdutoId($id);
+			$this->load->view('includes/header');
+			$this->load->view('includes/footer');
+			//Carrega o corpo da tela (Body)
+			$this->load->view('includes/menu');
+			$this->load->view('produto', $retorno);
+		}else{
+			$this->load->view('includes/header');
+			$this->load->view('includes/footer');
+			//Carrega o corpo da tela (Body)
+			$this->load->view('includes/menu');
+			$this->load->view('404NotFound');
+		}
+
+
 
 	}
 

@@ -4,15 +4,21 @@
 
     class M_produto extends CI_Model
     {
-        public function getProdutoId($id){
+        public function VerificaSeProdutoExistePorId($id){
 			$retorno = $this->db->query("select * from produto a 
 										 join detalhes b on b.id_detalhes = a.FK_id_detalhes
                                          where id_produto = '$id'");
             if($retorno->num_rows() > 0){
-                return $retorno->result();
+                return 1;
             }else{
                 return 0;
             }
+        }
+        public function getProdutoId($id){
+			$retorno = $this->db->query("select * from produto a 
+										 join detalhes b on b.id_detalhes = a.FK_id_detalhes
+										 where id_produto = '$id'");
+			return $retorno->result();
         }
 
         public function verificarSessao($usuario){

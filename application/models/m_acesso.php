@@ -9,11 +9,16 @@
                                         where email = '$email'
                                         and senha = '$senha'");
             if($retorno->num_rows() > 0){
-				return 1;
+                $this->db->query("update usuario set logado = true where email='$email'");
+                return $retorno->result();
             }else{
                 return 0;
             }
-        }
+		}
+		
+		public function capturaUsuarioLogado($email){
+			$retorno = $this->db->query("select * from usuario where email='$email' and logado=true");
+		}
 
         public function verificarSessao($usuario){
             $retorno = $this->db->query("select * from usuario where email = '$usuario' and tipo = 'comum'");

@@ -22,13 +22,16 @@ class Produtos extends CI_Controller {
 	public function mostrarcelular()
 	{
 
+		$this->load->model('m_produto');
+		$retorno['celulares'] = $this->m_produto->getCelulares();
 		$this->load->view('includes/footer');
 
 		//Carrega o corpo da tela (Body)
 		$this->load->view('includes/header');
 		$this->load->view('includes/menu');
 		$this->load->view('includes/carrousel');
-		$this->load->view('celulares');
+		$this->load->view('celulares', $retorno);
+		
 
 	}
 
@@ -38,10 +41,12 @@ class Produtos extends CI_Controller {
 		$this->load->view('includes/footer');
 
 		//Carrega o corpo da tela (Body)
+		$this->load->model('m_produto');
 		$this->load->view('includes/header');
+		$retorno['notebooks'] = $this->m_produto->getNotebooks();
 		$this->load->view('includes/menu');
 		$this->load->view('includes/carrousel');
-		$this->load->view('notebooks');
+		$this->load->view('notebooks', $retorno);
 
 	}
 
@@ -51,10 +56,13 @@ class Produtos extends CI_Controller {
 		$this->load->view('includes/footer');
 
 		//Carrega o corpo da tela (Body)
+		$this->load->model('m_produto');
 		$this->load->view('includes/header');
 		$this->load->view('includes/menu');
+		$retorno['acessorios'] = $this->m_produto->getAcessorios();
 		$this->load->view('includes/carrousel');
-		$this->load->view('acessorios');
+		$this->load->view('acessorios', $retorno);
+
 
 	}
 

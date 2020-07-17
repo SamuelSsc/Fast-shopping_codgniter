@@ -32,7 +32,7 @@ class Usuario extends CI_Controller {
 	public function cadastrarUser() {
 		$nome = $this->input->post('nome');
 		$email = $this->input->post('email');
-		$senha = $this->input->post md5('senha');
+		$senha = $this->input->post('senha');
 
 		$this->load->model('m_usuario');
 

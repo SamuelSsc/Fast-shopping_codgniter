@@ -26,11 +26,20 @@
 								 <?php echo $p->descricao?></li>			
 							</ul>
 							<?php// print_r($preco) ; onclick="comprar()" ?> 
-							<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#MyModal">
+							<button type="button" class="btn btn-primary mt-5" onclick="carrinho()">
 								Adicionar ao Carrinho
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-		<?php } ?>
+		<?php }?>
+</body>
+<script>
+
+	function carrinho() {
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "produtos/carrinho";
+	}
+
+</script>

@@ -8,14 +8,14 @@
 	
 	
 	<!--botao de Sair -->
-	<button type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
+	<button type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;" onclick="logout()">
 		Sair
 	</button>
 
 	<!--botao de Login-->
 		<?php
 		if ($this->session->userdata('usuario')){
-			echo strtoupper($this->session->userdata('usuario')->nome);
+			//echo strtoupper($this->session->userdata('usuario')->nome);
 		}else{
 			echo '<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
 			Login
@@ -110,5 +110,9 @@
 	function inicio(){
 		const base_url = "<?= base_url()?>";
 		window.location.href = base_url + "home";
+	}
+	function logout(){
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "Login/logout";
 	}
 </script>

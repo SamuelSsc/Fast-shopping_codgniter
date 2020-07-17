@@ -56,7 +56,7 @@ create table carrinho(
 Id_carrinho int not null auto_increment,
 Fk_id_produto int not null,
 Fk_id_usuario int not null,
-estado boolean,
+estado boolean default false,
 
 primary key (id_carrinho),
 foreign key (Fk_id_produto) references produto (id_produto),
@@ -82,6 +82,24 @@ create table compra(
 insert into detalhes(marca, ram, rom, gpu, processador, descricao)
 values 
 ("samsung", "16","1 TB","Geforce gtx1050 4GB","intel core i7 4.2Ghz","Altura: 17.9 mm; Largura: 375,6 mm; Profundidade: 255 mm; Peso: 2,4 kg; 
+<<<<<<< HEAD
+Entradas e saídas: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth"),
+("Positivo","4","1 TB", "Intel®HD Graphics 62"," Intel® Core™ i3-7020U 2.30GHz","Slots de Memória: On-board, LPDDR3, Unidade Ótica: Não ,Leitor de Cartões: SD / MMC
+=======
+<<<<<<< HEAD
+Entradas e saídas: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth"),
+("Positivo","4","1 TB", "Intel®\HD Graphics 62"," Intel® Core™ i3-7020U 2.30GHz","Slots de Memória: On-board, LPDDR3, Unidade Ótica: Não ,Leitor de Cartões: SD / MMC
+>>>>>>> a7ad9dda287b467b1f4a08e514db7b2cf830ffdc
+Portas de Conexão: 1x USB 3.0, 1x USB 2.0, 1x HDMI, 1x RJ-45, 1x Áudio (para microfone e fone de ouvido), 1x DC-in (carregador),Teclado: Português-Brasil, 88 teclas
+,Mouse: Tipo Touchpad, com toque múltiplo, 2 botões integrados, Carregador: 100~240V Automático, 65W ,Bateria: 2 células, 3000mAh (Integrada)
+Cor: Cobalt Gray, Dimensões: 336 x 223 x 20 mm, Peso Líquido: 1,5 Kg, Peso Bruto: 2,1 Kg, Conteúdo da embalagem: Notebook, Adaptador CA com cabo padrão Inmetro e Guia Rápido 
+de Instalação, Embalagem do Produto: 375 x 330 x 60 mm (L x P x A), Part Number | EAN: 3011572 / 7896904603378"),
+("Samsung","4","64GB","Android 9.0","Octa-core (4x2.0 GHz & 4x1.5 GHz)","Tamanho: 6.2 polegadas, Resolução: 720 x 1520 pixels, Dimensões: 156.9 x 75.8 x 7.8 mm, Peso: 168 g
+SIM Card: Single SIM ou Dual SIM (Nano SIM), Corpo: Vidro frontal, corpo de plástico, Sistema operacional: Android 9.0 (Pie), Wirelles: Wi-Fi n, Bluetooth: 5.0, GPS: GPS, GLONASS,
+Rádio: Sim, USB: microUSB 2.0, Sensores: Leitor de digitais (traseiro), acelerômetro, proximidade, Recursos: Flash LED, HDR, Vídeo: 1080p@30fps"),
+<<<<<<< HEAD
+=======
+=======
 Entradas e saÃ­das: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth"),
 ("Positivo","4","1 TB", "IntelÂ®HD Graphics 62"," IntelÂ® Coreâ„¢ i3-7020U 2.30GHz","Slots de MemÃ³ria: On-board, LPDDR3, Unidade Ã“tica: NÃ£o ,Leitor de CartÃµes: SD / MMC
 Portas de ConexÃ£o: 1x USB 3.0, 1x USB 2.0, 1x HDMI, 1x RJ-45, 1x Ã�udio (para microfone e fone de ouvido), 1x DC-in (carregador),Teclado: PortuguÃªs-Brasil, 88 teclas
@@ -91,11 +109,39 @@ de InstalaÃ§Ã£o, Embalagem do Produto: 375 x 330 x 60 mm (L x P x A), Part N
 ("Samsung","4","64GB","Android 9.0","Octa-core (4x2.0 GHz & 4x1.5 GHz)","Tamanho: 6.2 polegadas, ResoluÃ§Ã£o: 720 x 1520 pixels, DimensÃµes: 156.9 x 75.8 x 7.8 mm, Peso: 168 g
 SIM Card: Single SIM ou Dual SIM (Nano SIM), Corpo: Vidro frontal, corpo de plÃ¡stico, Sistema operacional: Android 9.0 (Pie), Wirelles: Wi-Fi n, Bluetooth: 5.0, GPS: GPS, GLONASS,
 RÃ¡dio: Sim, USB: microUSB 2.0, Sensores: Leitor de digitais (traseiro), acelerÃ´metro, proximidade, Recursos: Flash LED, HDR, VÃ­deo: 1080p@30fps"),
+>>>>>>> 586000e862200e1e3ee7fbe1fa16e0d9abdf4ccb
+>>>>>>> a7ad9dda287b467b1f4a08e514db7b2cf830ffdc
 ("Samsung","8","128GB","Android 9.0"," Octa-core (2x2.73 GHz Mongoose M4 & 2x2.31)","Peso: 157 g, SIM Card: Single SIM (Nano-SIM) ou Dual SIM (Nano-SIM)
-Corpo: Vidro traseiro (Gorilla Glass 5), bordas de alumÃ­nio,Tipo: AMOLED DinÃ¢mica, Tamanho: 6.1 polegadas Sensores: Sensor de impressÃ£o digital (sob a tela), acelerÃ´metro,
-giroscÃ³pio, proximidade, bÃºssola, barÃ´metro, batimento cardÃ­aco, SpO2, Recursos: Flash LED, VÃ­deo: 2160p@60fps, 1080p@240fps, 720p@960fps, HDR, Tripla: 12 MP, f/1.5-2.4, 26mm 
-(wide), 1/2.55, 1.4Âµm, PDAF Dual Pixel, estabilizaÃ§Ã£o Ã³ptica + 12 MP, f/2.4, 52mm (tele), 1/3.6, 1.0Âµm, estabilizaÃ§Ã£o Ã³ptica, zoom Ã³ptica 2x + 16 MP, f/2.2, 12mm (ultrawide),
-1.0Âµm, CÃ¢mera Ãšnica: 10 MP, f/1.9, 26mm (wide), 1.22Âµm, PDAF Dual Pixel, VÃ­deo: 2160p@30fps, 1080p@30fps, Recursos: Auto-HDR")
+Corpo: Vidro traseiro (Gorilla Glass 5), bordas de alumínio,Tipo: AMOLED Dinâmica, Tamanho: 6.1 polegadas Sensores: Sensor de impressão digital (sob a tela), acelerômetro,
+giroscópio, proximidade, bússola, barômetro, batimento cardíaco, SpO2, Recursos: Flash LED, Vídeo: 2160p@60fps, 1080p@240fps, 720p@960fps, HDR, Tripla: 12 MP, f/1.5-2.4, 26mm 
+(wide), 1/2.55, 1.4µm, PDAF Dual Pixel, estabilização óptica + 12 MP, f/2.4, 52mm (tele), 1/3.6, 1.0µm, estabilização óptica, zoom óptica 2x + 16 MP, f/2.2, 12mm (ultrawide),
+1.0µm, Câmera Única: 10 MP, f/1.9, 26mm (wide), 1.22µm, PDAF Dual Pixel, Vídeo: 2160p@30fps, 1080p@30fps, Recursos: Auto-HDR"),
+("Motorola","4","64GB","Android 9.0","Snapdragon 665 (octa-core de até 2 GHz","Aceita microSD: Sim, até 512 GB, Bateria: 4.000 mAh, Conectividade: 4G, 3G, Wi-Fi, Bluetooth 5.0
+Dual chip: Sim, Sistema operacional: Android 9 Pie, Sensores e recursos extras: Impressão digital, reconhecimento facial, Dimensões: 158,4 x 75,8 x 9,1 mm, Peso: 188 g"),
+("Motorola","4","128GB","Android 9.0","Octa-core 2.2 GHz","Wireless: Wi-Fi ac, Bluetooth: 5.0, GPS: GPS, GLONASS, GALILEO, BDS, Rádio: Sim, USB: 2.0, Tipo-C, NFC: Sim
+Sensores: Leitor de digitais (traseiro), acelerômetro, giroscópio, proximidade, bússola,Recursos da câmera: LED duplo, flash em dois tons, HDR Vídeo: 2160p@30fps, 1080p@30/60fps
+Tripla: 12 MP, f/1.8, (wide), 1.25µm, PDAF + 16 MP, f/2.2, 14mm (ultrawide), dedicada para vídeo + 5 MP, sensor de profundidade"),
+("Xiaomi","6","128GB","Android 10 MIUI","Processador octa-core de 2.0GHz","Bandas 4G: Banda LTE 1(2100), 3(1800), 5(850), 7(2600), 8(900), 40(2300), 41(2500),
+Dimensões: 161.3 x 76.4 x 8.8 mm, Peso: 199 g, SIM Card: Dual SIM (Nano SIM + Micro SIM), Corpo: Gorilla Glass 5 frontal e traseiro, Tipo: LCD IPS, Tamanho: 6.53 polegadas
+Resolução: 1080 x 2340 pixels, Proteção: Gorilla Glass 5Wireless: Wi-Fi ac, Bluetooth: 5.0, GPS: GPS, GLONASS, BDS, Rádio: Sim, USB: 2.0 (Tipo-C 1.0), NFC: Sim
+Infravermelho: Sim, Sensores: Leitor de digitais (traseiro), acelerômetro, giroscópio, proximidade, bússola, Recursos da câmera: Flash LED duplo, HDR"),
+("Xiaomi","6","128GB","Android 9 Pie 10 MIUI"," Qualcomm SDM855 Snapdragon 855+ (7 nm)","Interna: 128/256 GB 8 GB RAM, 256/512 GB 12 GB RAM, Alto-Falantes: Sim
+Saída 3.5mm: Não, Wireless: Wi-Fi ac, Bluetooth: 5.0, GPS: GPS, GLONASS, BDS, GALILEO, QZSS, Rádio: Não ,USB: 2.0, Tipo-C, NFC: Sim, Infravermelho: Sim
+Sensores: Sensor de impressões digitais (sob o display, óptico), acelerômetro, giroscópio, proximidade, bússola,
+Recursos da câmera: Flash LED duplo, HDRBandas 4G: Banda LTE 1(2100), 2(1900), 3(1800), 4(1700/2100), 5(850), 7(2600), 8(900), 12(700), 17(700), 41(2500), 
+Dimensões: 157.2 x 74.6 x 8.5 mm,Peso: 196 g, SIM Card: Dual SIM (Nano SIM), Corpo: Vidro traseiro (Gorilla Glass 6), bordas de alumínio (7000 series), Tipo: Super AMOLED,
+Tamanho: 6.39 polegadas, Resolução: 1080 x 2340 pixels, Proteção: Corning Gorilla Glass 6"),
+("Dell","4","500GB","Sistema: Ubuntu linux 18.04","Intel Core i5 2.5 GHz","Capacidade Total: 1 TB, Tamanho15.6 Resolução: HD, Tipo de tela: LCD, Touchscreen: Não
+Tipo de placa de vídeo: Integrada (On-Board), Modelo: HD Graphics 620, Teclado: Numérico, Português, Touchpad, USB Padrão: 3, Conexões Existentes: USB 3.0, USB-C, HDMI, Ethernet,
+Cartão SD, Conexões sem fio: Wi-Fi, Bluetooth, Audio: Alto falantes integrados, Saída de Fone de Ouvido, Webcam: Integrada, Microfone Embutido, Profundidade: 26 cm, 
+Altura (Tela Fechada): 2,4 cm, Largura: 38 cm, Peso: 1,9 Kg, Capacidade de bateria: Wh40 Wh"),
+("JBL","Versão Bluetooth 4.1","Bateria de 300mAh","Cores: preto, branco, azul","Potência do transmissor Bluetooth: < 4 dBm","Tamanho do alto falante: 32 mm
+Resposta de frequência: 20 Hz – 20 kHz, Potência do transmissor Bluetooth: < 4 dBm, Perfil do Bluetooth: 4.1, Bateria: Polímero de íons de lítio (3,7 V, 300 mAh),
+Tempo de carregamento: 2 horas, Tempo de reprodução de músicas: 16 horas, Cores: preto, branco, azul, Peso: 115g"),
+("Xiaomi","Isolamento de Ruído: Passivo","Frequência: 20 Hz - 20.000 Hz","Fone de Ouvido: Intra auricular","Driver: 7.2 mm","Resposta de Frequência: 20 Hz - 20.000 Hz,
+Fone de Ouvido: Intra auricular, Controles no Cabo: Sim (no próprio fone), Driver: 7.2 mm, Impedância: 16 Ohms, Isolamento de Ruído: Passivo"),
+("Samsung","Bluetooth: 3","Processador: MTK626A","Faz e recebe ligação","Sensível ao toque de 1,56 Polegadas","Processador: MTK626A, Bluetooth: 3, Faz e recebe ligação,
+Controla seus movimentos diários, Sensível ao toque de 1,56 Polegadas")
 ;
  
 

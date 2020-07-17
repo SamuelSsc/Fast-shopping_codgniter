@@ -15,14 +15,14 @@
 	<!--botao de Login-->
 		<?php
 		if ($this->session->userdata('usuario')){
-			echo '<h6>strtoupper($this->session->userdata"usuario"))</h6>';
+			//echo "strtoupper($this->session->userdata('usuario'))";
 		}else{
 			echo '<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
 			Login
 			</button>';
 		}
 		?>
-
+	
 		
     
 		

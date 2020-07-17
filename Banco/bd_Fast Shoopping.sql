@@ -52,7 +52,16 @@ create table endereco(
     primary key (cep)
 );
 
- 
+create table carrinho(
+Id_carrinho int not null auto_increment,
+Fk_id_produto int not null,
+Fk_id_usuario int not null,
+estado boolean,
+
+primary key (id_carrinho),
+foreign key (Fk_id_produto) references produto (id_produto),
+foreign key (Fk_id_usuario) references usuario (id_usuario)
+);
 
 create table compra(
     id_compra int not null auto_increment,

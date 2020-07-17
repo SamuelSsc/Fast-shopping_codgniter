@@ -19,8 +19,8 @@ class Login extends CI_Controller {
 
 	public function logarAjax()
 	{
-		$email = $this->input->post('txtEmail');
-		$senha = $this->input->post('txtSenha');
+		$email = $this->input->addcslashes post('txtEmail');
+		$senha = $this->input->post addcslashes('txtSenha');
 
 		$this->load->model('m_acesso');
 

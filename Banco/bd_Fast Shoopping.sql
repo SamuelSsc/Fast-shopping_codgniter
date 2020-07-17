@@ -60,7 +60,7 @@ estado boolean,
 
 primary key (id_carrinho),
 foreign key (Fk_id_produto) references produto (id_produto),
-foreign key (Fk_id_usuario) references usuario (id_usuario),
+foreign key (Fk_id_usuario) references usuario (id_usuario)
 );
 
 create table compra(

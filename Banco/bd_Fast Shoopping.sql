@@ -10,7 +10,7 @@ CREATE table usuario(
     Nome varchar(50) not null,
     email varchar(250)not null,
     Senha varchar(250)not null,
-    logado boolean default false,
+	logado boolean default false,
     primary key (id_Usuario)
 );
 

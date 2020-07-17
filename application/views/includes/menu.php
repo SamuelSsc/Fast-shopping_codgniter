@@ -3,7 +3,7 @@
 <div class="container-fluid" style="background-color: #46b7bf">
 	<a class="navbar-brand" onclick="inicio()">
 		<img src="<?= base_url("assets/img/S.png")?>" alt="logo" class="img-fluid">
-		<h5 class="nomo_loja ml-3 mb-0">Fast Shopping</h5>
+		<h5 class="nomo_loja mt-1 mb-0">Fast Shopping</h5>
 	</a>
 	
 	
@@ -15,7 +15,7 @@
 	<!--botao de Login-->
 		<?php
 		if ($this->session->userdata('usuario')){
-			//echo "strtoupper($this->session->userdata('usuario'))";
+			echo strtoupper($this->session->userdata('usuario')->nome);
 		}else{
 			echo '<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
 			Login

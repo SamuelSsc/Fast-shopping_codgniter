@@ -7,7 +7,7 @@
 				<div class="col-lg-8 col-md-10 col-sm-12 mb-12 mx-auto"> 
 					<div class="card ">
 						<div class="card-body">
-							<h5>Notebook gamer samsung odyssey</h5>
+							<h5 class="card-title"><?php echo $produto->nome ?></h5>
 							Marca: Samsung<br>
 							Memoria RAM: 16 GB(Ram)<br> 
 							Memoria Interna: 1TB (HD)<br>

@@ -19,8 +19,8 @@ class Login extends CI_Controller {
 
 	public function logarAjax()
 	{
-		$email = $this->input->addcslashes post('txtEmail');
-		$senha = $this->input->post addcslashes('txtSenha');
+		$email = $this->input->post('txtEmail');
+		$senha = $this->input->post('txtSenha');
 
 		$this->load->model('m_acesso');
 
@@ -28,10 +28,11 @@ class Login extends CI_Controller {
 
     
 		if($retorno ==1) {
-      		$_SESSION['usuario'] = $email;
-    	}else {
-			unset($_SESSION['usuario']);
-    	}
+				$usuarioLogado = $this->m_acesso->capturaUsuarioLogado($email);
+				$_SESSION['usuario'] = $usuarioLogado;
+		}else {
+				unset($_SESSION['usuario']);
+		}
 
 
 		echo $retorno;

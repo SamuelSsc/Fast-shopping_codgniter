@@ -45,7 +45,7 @@ class Produtos extends CI_Controller {
 
 	}
 
-	public function mostraracessorios($id)
+	public function mostraracessorios()
 	{
 
 		$this->load->view('includes/footer');
@@ -61,7 +61,7 @@ class Produtos extends CI_Controller {
 	public function mostraProdutoId()
 	{
 
-		$id = $this->input->post('id');
+		$id = $this->input->get('id');
 
 		$this->load->model('m_produto');
 
@@ -81,9 +81,6 @@ class Produtos extends CI_Controller {
 			$this->load->view('includes/menu');
 			$this->load->view('404NotFound');
 		}
-
-
-
 	}
 
 	public function comprar()

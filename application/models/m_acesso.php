@@ -18,6 +18,8 @@
 		
 		public function capturaUsuarioLogado($email){
 			$retorno = $this->db->query("select * from usuario where email='$email' and logado=true");
+
+			return $retorno->result();
 		}
 
         public function verificarSessao($usuario){

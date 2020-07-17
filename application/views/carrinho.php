@@ -16,8 +16,9 @@
             </div>
         </div>
         <div class="card-body ml-5">
-            <p>Produto1...</p>
-            <button type="button" class="btn btn-danger">Remover</button>
+			<?php foreach($produtosCarrinho as $produto) {?>
+				<h5><?php if($produto->tipo) echo $produto->tipo?></h5>
+			<?php } ?>
         </div>
         <div class="card-footer ml-auto">
             <button type="button" class="btn btn-success ml-auto">Adicionar ao carrinho</button>

@@ -5,30 +5,18 @@
 		<img src="<?= base_url("assets/img/S.png")?>" alt="logo" class="img-fluid">
 		<h5 class="nomo_loja mt-1 mb-0">Fast Shopping</h5>
 	</a>
-	
-	
-	<!--botao de Sair -->
-	<button type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;" onclick="logout()">
-		Sair
-	</button>
-
 	<!--botao de Login-->
-		<?php
-		if ($this->session->userdata('usuario')){
-			//echo strtoupper($this->session->userdata('usuario')->nome);
-		}else{
-			echo '<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
+	<?php if($this->session->userdata('usuario')) {?>
+
+		<button type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;" onclick="logout()">
+			Sair
+		</button>
+		<img class="btnLog btn-link mt-3 mr-2" src="<?= base_url("assets/img/cart.svg")?>" onclick="carrinho()"/>
+	<?php }else{?>
+		<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
 			Login
-			</button>';
-		}
-		?>
-	
-		
-    
-		
-
-
-
+		</button>
+	<?php }?>
 
 	<nav class="navbar-expand-lg navbar-dark" style="background-color: #46b7bf">
 
@@ -37,21 +25,9 @@
 			<button class="btn btn-btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
 		</form>
 
-		
-		
-
 		<!-- mensagem com o email-->
 		<div class="Msgemail">	
 		</div>
-
-
-		<!--botao de pesquisar
-	<nav class="navbar navbar-dark" style="background-color: #46b7bf">
-		<form class="form-inline mx-auto">
-			<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar produto" aria-label="Pesquisar">
-			<button class="btn btn-btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
-		</form>
-	</nav>-->
 
 		<!--botao dos menu-->
 		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSite">
@@ -114,5 +90,9 @@
 	function logout(){
 		const base_url = "<?= base_url()?>";
 		window.location.href = base_url + "Login/logout";
+	}
+	function carrinho() {
+		const base_url = "<?= base_url()?>";
+		window.location.href = base_url + "produtos/carrinho";
 	}
 </script>

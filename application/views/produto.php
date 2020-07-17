@@ -26,7 +26,7 @@
 								 <?php echo $p->descricao?></li>			
 							</ul>
 							<?php// print_r($preco) ; onclick="comprar()" ?> 
-							<button type="button" class="btn btn-primary mt-5" onclick="carrinho()">
+							<button type="button" class="btn btn-primary mt-5" onclick="carrinho(<?= $p->id_produto?>)">
 								Adicionar ao Carrinho
 							</button>
 						</div>
@@ -37,9 +37,9 @@
 </body>
 <script>
 
-	function carrinho() {
+	function carrinho(id) {
 		const base_url = "<?= base_url()?>";
-		window.location.href = base_url + "produtos/carrinho";
+		window.location.href = base_url + `produtos/addCarrinho/?id=${id}`;
 	}
 
 </script>

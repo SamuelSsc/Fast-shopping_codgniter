@@ -16,7 +16,7 @@
 			  <li class="list-group-item"><?php echo $produto->processador?></li>
 			  <li class="list-group-item">R$ <?php echo $produto->preco?></li>
             </ul>
-            <button type="button" class="btn btn-outline-info btn-block my-3" onclick="odyssei()">
+            <button type="button" class="btn btn-outline-info btn-block my-3" onclick="produto(<?php $produto->id_produto ?>)">
             Saiba Mais
             </button>
           </div>
@@ -29,9 +29,24 @@
 
 <script>
 
-	function odyssei() {
-		const base_url = "<?= base_url()?>";
-		window.location.href = base_url + "produtos/odyssei";
+	function produto(id) {
+		$.ajax({
+			type: "POST",
+			url: "produtos/mostraProdutoId",
+			data: {'id' : id},
+			success: function() {
+				const base_url = "<?= base_url(); ?>";
+				window.location.href = base_url + 'produtos/mostraProdutoId';
+			},
+			beforeSend: function() {
+				swal({
+						title: "Aguarde!",
+						text: "Carregando...",
+						imageUrl: "assets/img/gifs/preloader.gif",
+						showConfirmButton: false
+				});
+			},
+		})
 	}
 
 </script>

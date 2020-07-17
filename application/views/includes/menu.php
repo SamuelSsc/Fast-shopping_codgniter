@@ -3,7 +3,7 @@
 <div class="container-fluid" style="background-color: #46b7bf">
 	<a class="navbar-brand" onclick="inicio()">
 		<img src="<?= base_url("assets/img/S.png")?>" alt="logo" class="img-fluid">
-		<h5 class="nomo_loja ml-3 mb-0">Fast Shopping</h5>
+		<h5 class="nomo_loja mt-1 mb-0">Fast Shopping</h5>
 	</a>
 
 	<!--botao de Sair -->

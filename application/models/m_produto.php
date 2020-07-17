@@ -4,11 +4,12 @@
 
     class M_produto extends CI_Model
     {
-        public function get($id){
-            $retorno = $this->db->query("select * from produto
-                                        where id_produto = '$id'");
+        public function getProdutoId($id){
+			$retorno = $this->db->query("select * from produto a 
+										 join detalhes b on b.id_detalhes = a.FK_id_detalhes
+                                         where id_produto = '$id'");
             if($retorno->num_rows() > 0){
-                return $retorno;
+                return $retorno->result();
             }else{
                 return 0;
             }

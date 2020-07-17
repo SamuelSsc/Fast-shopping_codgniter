@@ -56,7 +56,7 @@ create table carrinho(
 Id_carrinho int not null auto_increment,
 Fk_id_produto int not null,
 Fk_id_usuario int not null,
-estado boolean,
+estado boolean default false,
 
 primary key (id_carrinho),
 foreign key (Fk_id_produto) references produto (id_produto),
@@ -82,8 +82,14 @@ create table compra(
 insert into detalhes(marca, ram, rom, gpu, processador, descricao)
 values 
 ("samsung", "16","1 TB","Geforce gtx1050 4GB","intel core i7 4.2Ghz","Altura: 17.9 mm; Largura: 375,6 mm; Profundidade: 255 mm; Peso: 2,4 kg; 
+<<<<<<< HEAD
 Entradas e saídas: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth"),
 ("Positivo","4","1 TB", "Intel®HD Graphics 62"," Intel® Core™ i3-7020U 2.30GHz","Slots de Memória: On-board, LPDDR3, Unidade Ótica: Não ,Leitor de Cartões: SD / MMC
+=======
+<<<<<<< HEAD
+Entradas e saídas: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth"),
+("Positivo","4","1 TB", "Intel®\HD Graphics 62"," Intel® Core™ i3-7020U 2.30GHz","Slots de Memória: On-board, LPDDR3, Unidade Ótica: Não ,Leitor de Cartões: SD / MMC
+>>>>>>> a7ad9dda287b467b1f4a08e514db7b2cf830ffdc
 Portas de Conexão: 1x USB 3.0, 1x USB 2.0, 1x HDMI, 1x RJ-45, 1x Áudio (para microfone e fone de ouvido), 1x DC-in (carregador),Teclado: Português-Brasil, 88 teclas
 ,Mouse: Tipo Touchpad, com toque múltiplo, 2 botões integrados, Carregador: 100~240V Automático, 65W ,Bateria: 2 células, 3000mAh (Integrada)
 Cor: Cobalt Gray, Dimensões: 336 x 223 x 20 mm, Peso Líquido: 1,5 Kg, Peso Bruto: 2,1 Kg, Conteúdo da embalagem: Notebook, Adaptador CA com cabo padrão Inmetro e Guia Rápido 
@@ -91,6 +97,20 @@ de Instalação, Embalagem do Produto: 375 x 330 x 60 mm (L x P x A), Part Numbe
 ("Samsung","4","64GB","Android 9.0","Octa-core (4x2.0 GHz & 4x1.5 GHz)","Tamanho: 6.2 polegadas, Resolução: 720 x 1520 pixels, Dimensões: 156.9 x 75.8 x 7.8 mm, Peso: 168 g
 SIM Card: Single SIM ou Dual SIM (Nano SIM), Corpo: Vidro frontal, corpo de plástico, Sistema operacional: Android 9.0 (Pie), Wirelles: Wi-Fi n, Bluetooth: 5.0, GPS: GPS, GLONASS,
 Rádio: Sim, USB: microUSB 2.0, Sensores: Leitor de digitais (traseiro), acelerômetro, proximidade, Recursos: Flash LED, HDR, Vídeo: 1080p@30fps"),
+<<<<<<< HEAD
+=======
+=======
+Entradas e saÃ­das: USB-C (1), USB 3.0 (2), USB 2.0 (1), HDMI e Ethernet; Sensores: Wi-Fi AC e Bluetooth"),
+("Positivo","4","1 TB", "IntelÂ®HD Graphics 62"," IntelÂ® Coreâ„¢ i3-7020U 2.30GHz","Slots de MemÃ³ria: On-board, LPDDR3, Unidade Ã“tica: NÃ£o ,Leitor de CartÃµes: SD / MMC
+Portas de ConexÃ£o: 1x USB 3.0, 1x USB 2.0, 1x HDMI, 1x RJ-45, 1x Ã�udio (para microfone e fone de ouvido), 1x DC-in (carregador),Teclado: PortuguÃªs-Brasil, 88 teclas
+,Mouse: Tipo Touchpad, com toque mÃºltiplo, 2 botÃµes integrados, Carregador: 100~240V AutomÃ¡tico, 65W ,Bateria: 2 cÃ©lulas, 3000mAh (Integrada)
+Cor: Cobalt Gray, DimensÃµes: 336 x 223 x 20 mm, Peso LÃ­quido: 1,5 Kg, Peso Bruto: 2,1 Kg, ConteÃºdo da embalagem: Notebook, Adaptador CA com cabo padrÃ£o Inmetro e Guia RÃ¡pido 
+de InstalaÃ§Ã£o, Embalagem do Produto: 375 x 330 x 60 mm (L x P x A), Part Number | EAN: 3011572 / 7896904603378"),
+("Samsung","4","64GB","Android 9.0","Octa-core (4x2.0 GHz & 4x1.5 GHz)","Tamanho: 6.2 polegadas, ResoluÃ§Ã£o: 720 x 1520 pixels, DimensÃµes: 156.9 x 75.8 x 7.8 mm, Peso: 168 g
+SIM Card: Single SIM ou Dual SIM (Nano SIM), Corpo: Vidro frontal, corpo de plÃ¡stico, Sistema operacional: Android 9.0 (Pie), Wirelles: Wi-Fi n, Bluetooth: 5.0, GPS: GPS, GLONASS,
+RÃ¡dio: Sim, USB: microUSB 2.0, Sensores: Leitor de digitais (traseiro), acelerÃ´metro, proximidade, Recursos: Flash LED, HDR, VÃ­deo: 1080p@30fps"),
+>>>>>>> 586000e862200e1e3ee7fbe1fa16e0d9abdf4ccb
+>>>>>>> a7ad9dda287b467b1f4a08e514db7b2cf830ffdc
 ("Samsung","8","128GB","Android 9.0"," Octa-core (2x2.73 GHz Mongoose M4 & 2x2.31)","Peso: 157 g, SIM Card: Single SIM (Nano-SIM) ou Dual SIM (Nano-SIM)
 Corpo: Vidro traseiro (Gorilla Glass 5), bordas de alumínio,Tipo: AMOLED Dinâmica, Tamanho: 6.1 polegadas Sensores: Sensor de impressão digital (sob a tela), acelerômetro,
 giroscópio, proximidade, bússola, barômetro, batimento cardíaco, SpO2, Recursos: Flash LED, Vídeo: 2160p@60fps, 1080p@240fps, 720p@960fps, HDR, Tripla: 12 MP, f/1.5-2.4, 26mm 

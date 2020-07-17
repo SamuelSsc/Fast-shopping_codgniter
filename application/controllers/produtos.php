@@ -86,6 +86,19 @@ class Produtos extends CI_Controller {
 
 	}
 
+	public function carrinho()
+	{
+
+		$this->load->view('includes/footer');
+
+		//Carrega o corpo da tela (Body)
+		
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		//$this->load->view('includes/carrousel');
+		$this->load->view('carrinho');
+	}
+
 	public function comprar()
 	{
 

@@ -15,7 +15,7 @@
 	<!--botao de Login-->
 		<?php
 		if ($this->session->userdata('usuario')){
-			echo strtoupper($this->session->userdata('usuario')->nome);
+			//echo strtoupper($this->session->userdata('usuario')->nome);
 		}else{
 			echo '<button onclick="chamaLogin();" id="acessa_login" type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;">
 			Login

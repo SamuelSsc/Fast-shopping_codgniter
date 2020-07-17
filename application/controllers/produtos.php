@@ -45,7 +45,7 @@ class Produtos extends CI_Controller {
 
 	}
 
-	public function mostraracessorios()
+	public function mostraracessorios($id)
 	{
 
 		$this->load->view('includes/footer');
@@ -58,15 +58,31 @@ class Produtos extends CI_Controller {
 
 	}
 
-	public function odyssei()
+	public function mostraProdutoId()
 	{
 
-		$this->load->view('includes/footer');
-		//$this->load->model('m_produto/detalhesprod');
-		//Carrega o corpo da tela (Body)
-		$this->load->view('includes/header');
-		$this->load->view('includes/menu');
-		$this->load->view('odyssei');
+		$id = $this->input->post('id');
+
+		$this->load->model('m_produto');
+
+		$verifica = $this->m_produto->VerificaSeProdutoExistePorId($id);
+
+		if($verifica == 1) {
+			$retorno['produto'] = $this->m_produto->getProdutoId($id);
+			$this->load->view('includes/header');
+			$this->load->view('includes/footer');
+			//Carrega o corpo da tela (Body)
+			$this->load->view('includes/menu');
+			$this->load->view('produto', $retorno);
+		}else{
+			$this->load->view('includes/header');
+			$this->load->view('includes/footer');
+			//Carrega o corpo da tela (Body)
+			$this->load->view('includes/menu');
+			$this->load->view('404NotFound');
+		}
+
+
 
 	}
 
@@ -104,15 +120,7 @@ class Produtos extends CI_Controller {
 		$this->load->view('includes/menu');
 		$this->load->view('sobre');
 
-	}
-
-	
-
-	public function mostraProduto($id) {
-	$this->load->model('m_produto');
-	$retorno = $this->m_produto->get($id);
-	}
-	
+	}	
 
 }
 ?>

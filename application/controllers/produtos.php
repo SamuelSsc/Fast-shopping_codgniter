@@ -99,6 +99,10 @@ class Produtos extends CI_Controller {
 		$usuario = $this->m_acesso->capturaUsuarioLogado($email);
 		$this->load->model('m_carrinho');
 		$retorno['produtosCarrinho'] = $this->m_carrinho->chamaCarrinho($usuario->id_Usuario);
+		/*echo '<pre>';
+		print_r($usuario);
+		echo '</pre>';*/
+	
 
 		$this->load->view('includes/header');
 		$this->load->view('includes/menu');

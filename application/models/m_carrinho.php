@@ -4,11 +4,11 @@
 
     class M_carrinho extends CI_Model
     {
-		public function chamaCarrinho($id_usuario){
+		public function chamaCarrinho($id_Usuario){
 			$retorno = $this->db->query("select * from carrinho a 
 										 join usuario b on b.id_usuario = a.FK_id_usuario
 										 join produto c on c.id_produto = a.FK_id_produto
-										 where b.id_usuario = '$id_usuario' and estado = false
+										 where b.id_usuario = '$id_Usuario' and estado = false
 										 ");
 				
 			return $retorno;

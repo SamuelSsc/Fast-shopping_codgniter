@@ -11,7 +11,17 @@
 										 where b.id_usuario = '$id_Usuario' and estado = false
 										 ");
 				
-			return $retorno;
+			return $retorno->result();
+		}
+
+		public function finalizaCompra($id_usuario) {
+			$retorno = $this->db->query("update carrinho set estado = true where fk_id_usuario = '$id_usuario' ");
+
+			if($this->db->num_rows() > 0) {
+				return 1;
+			}else {
+				return 0;
+			}			
 		}
 
 		public function adicionaCarrinho($id_usu, $id_prod) {

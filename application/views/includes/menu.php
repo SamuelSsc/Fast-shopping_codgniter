@@ -5,9 +5,9 @@
 		<img src="<?= base_url("assets/img/S.png")?>" alt="logo" class="img-fluid">
 		<h5 class="nomo_loja mt-1 mb-0">Fast Shopping</h5>
 	</a>
+
 	<!--botao de Login-->
 	<?php if($this->session->userdata('usuario')) {?>
-
 		<button type="button" class="btnLog btn-link mt-3 mr-2" style="border: 0; color: #fff;" onclick="logout()">
 			Sair
 		</button>

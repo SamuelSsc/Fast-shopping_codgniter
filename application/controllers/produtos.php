@@ -93,17 +93,21 @@ class Produtos extends CI_Controller {
 
 	public function carrinho() {
 		
-		$email = $this->session->userdata('usuario');
-		$this->load->model('m_acesso');
-		
-		$usuario = $this->m_acesso->capturaUsuarioLogado($email);
-		$this->load->model('m_carrinho');
-		$retorno['produtosCarrinho'] = $this->m_carrinho->chamaCarrinho($usuario->id_Usuario);
+		$retorno['produtosCarrinho']= [""];
 
-		$this->load->view('includes/header');
-		$this->load->view('includes/menu');
-		//$this->load->view('includes/carrousel');
-		$this->load->view('carrinho', $retorno);
+		if($this->session->userdata('usuario')){
+			$email = $this->session->userdata('usuario');
+			$this->load->model('m_acesso');
+			$usuario = $this->m_acesso->capturaUsuarioLogado($email);
+			$this->load->model('m_carrinho');
+			foreach($usuario as $usu) {
+				$retorno['produtosCarrinho'] = $this->m_carrinho->chamaCarrinho($usu->id_Usuario);
+			}
+			$this->load->view('includes/header');
+			$this->load->view('includes/menu');
+			//$this->load->view('includes/carrousel');
+			$this->load->view('carrinho', $retorno);
+		}
 	}
 
 	public function addCarrinho()
@@ -112,29 +116,29 @@ class Produtos extends CI_Controller {
 
 		$retorno['produtosCarrinho']= [""];
 		
+		if($this->session->userdata('usuario')) {
+			$email = $this->session->userdata('usuario');
+			$this->load->model('m_acesso');
 			
-		$email = $this->session->userdata('usuario');
-		$this->load->model('m_acesso');
+			$usuario = $this->m_acesso->capturaUsuarioLogado($email);
+			$this->load->model('m_carrinho');
+			
+			foreach($usuario as $usu) {
+				$produtoAdicionadoAoCarrinho = $this->m_carrinho->adicionaCarrinho($usu->id_Usuario, $id_produto);
+				if($produtoAdicionadoAoCarrinho >= 1 ) {
+					$retorno['produtosCarrinho'] = $this->m_carrinho->chamaCarrinho($usu->id_Usuario);
 
-		$usuario = $this->m_acesso->capturaUsuarioLogado($email);
-		$this->load->model('m_carrinho');
+				}
+			}
+			$this->load->view('includes/header');
+			$this->load->view('includes/menu');
+			//$this->load->view('includes/carrousel');
+			$this->load->view('carrinho', $retorno);
 
-		foreach($usuario as $usu) {
-			$produtoAdicionadoAoCarrinho = $this->m_carrinho->adicionaCarrinho($usu->id_Usuario, $id_produto);
-			$retorno['produtosCarrinho'] = $this->m_carrinho->chamaCarrinho($usu->id_Usuario);
-			$this->load->view('includes/footer');
-
-		//Carrega o corpo da tela (Body)
-		
-	}
-	
-	$this->load->view('includes/header');
-	$this->load->view('includes/menu');
-	//$this->load->view('includes/carrousel');
-	$this->load->view('carrinho', $retorno);
-				
-
-		
+			header('location: /fastnovo/produtos/carrinho');
+		}else {
+			header('location: /fastnovo/Login');
+		}
 	}
 
 	public function comprar()
